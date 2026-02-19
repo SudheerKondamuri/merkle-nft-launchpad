@@ -22,8 +22,9 @@ contract MyNFT is ERC721A, Ownable {
 
     // Constructor
     constructor(
-        string memory _initNotRevealedUri
-    ) ERC721A("Sudheer Collection", "SUD") Ownable(msg.sender) {
+        string memory _initNotRevealedUri,
+        address _owner
+    ) ERC721A("Invincible Collection", "INVC") Ownable(_owner) {
         notRevealedURI = _initNotRevealedUri;
     }
 
