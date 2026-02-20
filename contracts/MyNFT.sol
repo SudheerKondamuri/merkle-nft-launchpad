@@ -23,8 +23,10 @@ contract MyNFT is ERC721A, Ownable {
     // Constructor
     constructor(
         string memory _initNotRevealedUri,
-        address _owner
-    ) ERC721A("Invincible Collection", "INVC") Ownable(_owner) {
+        string memory  _name,
+        string memory _symbol
+
+    ) ERC721A(_name, _symbol) Ownable(msg.sender) {
         notRevealedURI = _initNotRevealedUri;
     }
 
@@ -75,4 +77,5 @@ contract MyNFT is ERC721A, Ownable {
         );
         require(success, "Transfer failed");
     }
+    
 }
